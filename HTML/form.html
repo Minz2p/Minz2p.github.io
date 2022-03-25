@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form | label for | input type  -->
+
+     <form action="request.php" method="POST"> <!-- action= link . template  | method = GET , POST , PUT(editing) , DEL -->
+
+        
+        <!-- Text | required | placeholder -->
+        <label for="text">Name</label>
+        <input type="text" name="stu-name" id="text" required placeholder="Name">
+        <!-- Text | required | placeholder -->
+
+        <br><br>
+
+        <!-- email -->
+        <label for="email">Email</label>
+        <input type="email" name="stu-email" id="email">
+        <!-- email -->
+
+        <br><br>
+
+        <!-- password -->
+        <label for="password">Password</label>
+        <input type="password" name="stu-password" id="password">
+        <!-- password -->
+
+        <br><br>
+
+        <!-- numbeer -->
+        <label for="phone">Phone</label>
+        <input type="number" name="stu-phone" id="phone">
+        <!-- numbeer -->
+
+        <br><br>
+
+        <!-- submit -->
+        <button type="submit">Submit</button>
+        <!-- submit -->
+
+        <br><br>
+
+        <!-- file -->
+        <label for="passport">Passport</label>
+        <input type="file" name="stu_passport" id="passport" accept="image/*">
+        <!-- file -->
+
+        <br><br>
+
+        <!-- select | option  -->
+        <label for="year">Years</label>
+        <select name="stu_year" id="year">
+            <option value="">Choose Year</option>
+            <option value="1">First Year</option>
+            <option value="2">Second Year</option>
+            <option value="3">Third Year</option>
+        </select>
+        <!-- select | option  -->
+
+        <br><br>
+
+        <!-- radio -->
+        <label for="">Gender</label><br>
+        <input type="radio" name="gender" id="male"><label for="male">Male</label>
+        <input type="radio" name="gender" id="female"><label for="female">Female</label>
+        <!-- radio -->
+
+        <br><br>
+
+        <!-- checkbox -->
+        <label for="">Hoobies</label>
+        <input type="checkbox" name="annimation" id="annimation"><label for="annimation">Annimation</label>
+        <input type="checkbox" name="bonsai" id="bonsai"><label for="bonsai">Bonsai</label>
+        <input type="checkbox" name="travelling" id="travelling"><label for="travelling">Travelling</label>
+        <!-- checkbox -->
+
+        <br><br>
+
+        <!-- textarea -->
+        <label for="address">Address</label>
+        <textarea name="stu_address" id="address" cols="30" rows="5"></textarea>
+        <!-- textarea -->
+
+        <br><br>
+
+        <!-- time -->
+        <input type="time">
+        <!-- time -->
+
+        <!-- date -->
+        <input type="date">
+        <!-- date -->
+
+        <!-- datetime-local -->
+        <input type="datetime-local">
+        <!-- datetime-local -->
+
+        <!-- week -->
+        <input type="week">
+        <!-- week -->
+
+        <!-- color -->
+        <input type="color">
+        <!-- color -->
+
+        <!-- range -->
+        <input type="range" min="0" max="100" value="20">
+        <!-- range -->
+
+        <!-- text | readonly -->
+        <input type="text" value="I am a programmer." readonly>
+        <!-- text | readonly -->
+
+    </form>
+</body>
+</html>
