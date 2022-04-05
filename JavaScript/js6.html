@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Js-6</title>
+</head>
+<body>
+    <script>
+        //array
+        let arr = [1,2,3];
+        let arr1 = Array('a','b','c');
+        console.log(arr);
+        console.log(arr1);
+        console.log(arr[2]);
+        console.log(arr1[2]);
+
+        let arr2 = [1,2,3,'a','b','c',['x',25]];
+        console.log(arr2);
+        console.log(arr2[6]);
+
+        //multi division
+        let multi = [[1,2,3],['a','b','c'],[22,33,'xx','yy']];
+        console.log(multi[2][3]);
+
+        //array
+        let fruits = [];
+        fruits[0] = 'Apple';
+        fruits[1] = 'Orange';
+        fruits[2] = 'Banana';
+        console.log(fruits);
+
+        //push
+        fruits.push('Mango'); // push = အနောက်ကို article ထည့်
+        console.log(fruits);
+
+        //unshift
+        fruits.unshift('Cherry');// unshift = အရှေ့ကို article ထည့်
+        console.log(fruits);
+
+        //pop
+        fruits.pop();// push = အနောက်ကို article remove
+        console.log(fruits);
+
+        //shift
+        fruits.shift();// unshift = အရှေ့ကို article remove
+        console.log(fruits);
+
+        //sort
+        fruits.sort();// ကြီးစဥ်ငယ် လိုက် စီ
+        console.log(fruits);
+
+        //reverse
+        fruits.reverse();// reverse လုပ်ပြီး ကြီးစဥ်ငယ် လိုက် စီ
+        console.log(fruits);
+
+        //array to string
+        let fruits_str = fruits.toString();
+        console.log(fruits_str);
+        console.log(typeof(fruits_str));
+        fruits = fruits_str.split(',');
+        console.log(fruits);
+
+        //concat
+        let arr_a = [1,2,3];
+        let arr_b = ['a','b','c'];
+        let arr_c = arr_a.concat(arr_b);
+        console.log(arr_c);
+        let arr_d = [...arr_a,...arr_b];
+        console.log(arr_d);
+    </script>
+</body>
+</html>
