@@ -9,30 +9,19 @@
 <body>
     
     <script>
-        // let traffic_light = prompt("Eneter Traffic Light Color");
-        // console.log(traffic_light);
-        // if (traffic_light == 'green'){
-        //     document.write('<h1>Start Driving a Car</h1>');
-        // }else if (traffic_light == 'red'){
-        //     document.write('<h1>Stop a car</h1>');
-        // }else if (traffic_light == 'yellow'){
-        //     document.write('<h1>Warning to red light</h1>');
-        // }else{
-        //     document.write('<h1>Device Error !</h1>')
-        // }
-        for (let m = 1;m <= 5;m++){
-            for(let p = 5; p >= m; p--){
-                document.write('*');
-            }
-            document.write('<br>');
+        
+        let traffic_light = prompt("Eneter Traffic Light Color");
+        console.log(traffic_light);
+        if (traffic_light == 'green'){
+            document.write('<h1>Start Driving a Car</h1>');
+        }else if (traffic_light == 'red'){
+            document.write('<h1>Stop a car</h1>');
+        }else if (traffic_light == 'yellow'){
+            document.write('<h1>Warning to red light</h1>');
+        }else{
+            document.write('<h1>Device Error !</h1>')
         }
-
-        for (let m = 1;m <= 5;m++){
-            for(let p = 1; p <= m; p++){
-                document.write('*');
-            }
-            document.write('<br>');
-        }
+        
     </script>
 </body>
 </html>
