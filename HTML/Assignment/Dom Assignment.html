@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Table</title>
+</head>
+<body>
+
+    <table border="1" cellspacing="0" cellpadding="20">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <br><br>
+
+    <form>
+        <label for="hum-name"></label>
+        <input type="text" name="hum-name" id="hum-name" title="please fill your name"  placeholder="Name">
+        <br><br>
+        <label for="hum-age"></label>
+        <input type="number" name="hum-age" id="hum-age" title="please fill your age" placeholder="Age">
+        <br><br>
+    </form>
+
+    <button type="button" onclick="clicking()" title="Please touch on click">Click</button>
+
+    <script>
+        let myData = ''
+           let i=1;   
+       function clicking(){
+           let name = document.querySelector('#hum-name').value;
+           console.log(name);
+           let age = document.querySelector('#hum-age').value;
+           console.log(age);
+            
+        
+               myData += `<tr>
+                   <td>${i++}</td>
+                   <td>${name}</td>
+                   <td>${age}</td>
+                   </tr>`
+           let tbody = document.querySelector('#tbody');
+           tbody.innerHTML = myData;
+           
+       }
+   </script>
+
+</body>
+</html>
