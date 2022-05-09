@@ -41,17 +41,35 @@
            let age = document.querySelector('#hum-age').value;
            console.log(age);
             
-        
                myData += `<tr>
                    <td>${i++}</td>
                    <td>${name}</td>
                    <td>${age}</td>
                    </tr>`
+                
            let tbody = document.querySelector('#tbody');
            tbody.innerHTML = myData;
            
        }
    </script>
+
+   <!-- <script>
+
+       let j = 1;
+       function add(){
+           // alert('hello');
+           let name = document.querySelector('#name').value;
+           console.log(name);
+           let age = document.querySelector('#age').value;
+           console.log(age);
+           let tbody = document.querySelector('#tbody');
+           tbody.innerHTML += `<tr>
+            <td>${j++}</td>
+            <td>${name}</td>
+            <td>${age}</td>
+            </tr>`;
+       }
+   </script> -->
 
 </body>
 </html>

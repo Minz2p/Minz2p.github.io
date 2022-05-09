@@ -1,0 +1,267 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.logo{
+    width: 100px;
+    height: 70px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+.brand_name{
+    position: relative;
+    top: -60px;
+    left: 85px;
+    font-family: lobster;
+    font-size:20px;
+}
+.navbar ul{
+    float:right;
+}
+.nav_brand{
+    display:inline-block;
+}
+.navbar ul li{
+    display:inline-block;
+    padding-top: 30px;
+    padding-right: 40px;
+    text-transform: uppercase;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:black;
+}
+
+@font-face {
+    src: url(../lobster/lobster-Regular.ttf);
+    font-family:lobster;
+}
+.cart{
+    position: relative;
+    top:-18px;
+    left: -7px;
+    background-color: black;
+    padding: 0px 5px;
+    color: white;
+    border-radius: 50%;
+}
+.navbar ul li a:hover{
+    color: #3797b9;
+    display: inline-block;
+    transform: translate(4px,-5px);
+    transition-duration: .5s;
+
+}
+
+.navbar{
+    height: 90px;
+}
+/* background */
+
+.img{
+    width: 100%;
+}
+.background_text{
+    position: absolute;
+    top: 250px;
+    left: 100px;
+}
+.perfect{
+    font-family: lobster;
+    font-weight: unset;
+    margin-bottom: 15px;
+}
+.shop_btn{
+    border: 1px solid #3797b9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    color:#3797b9;
+}
+.shop_btn:hover{
+    background-color: #3797b9;
+    color:white;
+}
+
+/* product  */
+.product_header{
+    text-align: center;
+    margin-top: 50px;
+}
+.divided{
+    width:100px;
+    margin: auto;
+    border: 1px solid #3797b9;
+    margin-bottom: 50px;
+}
+.product{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    margin-right: 50px;
+    margin-left: 50px;
+    grid-gap: 40px;
+    text-align: center;
+}
+.product_img{
+    width: 100%;
+    border-radius:5px;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,.17);
+}
+.addtocart{
+    border: 1px solid #e3e7e8;
+    background-color:#e3e7e8;
+    padding: 10px 25px;
+    border-radius:15px;
+    margin-top: 15px;
+}
+.addtocart:hover{
+    cursor: pointer;
+}
+.product div p {
+    margin-top: 15px;
+}
+
+/* about */
+.about{
+    background-image: url(../image/background.jpg);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+.about div{
+    padding: 70px;
+}
+.divid{
+    width: 30px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* packaging */
+.packaging{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+.packaging img{
+    width: 30%;
+    float: left;
+    border-radius: 10px;
+    margin-top:30px;
+}
+.packaging_text{
+    position: relative;
+    left: 50px;
+    width: 90%;
+    text-align: justify;
+    margin-top:30px;
+}
+.fa-circle-arrow-right{
+    padding-right: 10px;
+}
+.packaging_header{
+    margin-top: 20px;
+}
+.clear{
+    clear: both;
+}
+
+/* service */
+.service{
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+    background-color: #e2e8ea;
+    padding-top: 50px;
+    margin-top: 80px;
+    padding-left: 40px;
+    padding-bottom: 50px;
+}
+.service div p{
+    display: inline-block;
+    padding-left: 20px;
+    line-height: 27px;
+}
+.service div p b{
+    font-size: 20px;
+}
+
+/* footer */
+.footer{
+    background-color: #212529;
+}
+
+.footer_nav{
+    text-decoration: none;
+    color: white;
+    padding-top: 50px;
+    display: inline-block;
+    margin:0px 20px ;
+}
+
+.designed_by{
+    color: white;
+    margin-top: 20px;
+}
+
+.footer_icon{
+    color:white;
+    margin: 20px 10px 0px ;
+    display:inline-block;
+    padding-bottom: 20px;
+}
+/* contact page */
+
+.contact{
+    background-color: #e2e8ea;
+    text-align:center;
+}
+.contact h1{
+    padding: 40px 0px;
+}
+.contactus{
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    text-align: center;
+    grid-column-gap: 50px;
+    margin:80px 100px;
+}
+.contactus div{
+    background-color: #f6f7f7;
+    padding: 30px;
+    border-radius: 10px;
+}
+.contactus div p{
+    font-weight: bold;
+    padding: 5px;
+}
+
+.message{
+    display: grid;
+    grid-template-columns: 500px auto;
+    line-height: 30px;
+    grid-column-gap: 100px;
+    margin: 80px 100px;
+}
+
+input[type="text"],input[type="email"]{
+    width: 100%;
+    height: 35px;
+}
+#message{
+    width: 100%;
+    height: 100px;
+}
+.contact_label{
+    margin-top: 20px;
+    display: inline-block;
+}
+.send{
+    float:right;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+.message div iframe{
+    margin-top: 80px;
+}

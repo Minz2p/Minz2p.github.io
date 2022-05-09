@@ -8,18 +8,79 @@
 </head>
 <body>
     <h1>Calculator</h1>
+    <style>
+        .error{
+            border-color: red;
+        }
+        small{
+            color: red;  
+        }
+    </style>
 
-    <form action="calculator.html" method="POST">
-        <label for="One">Number One :</label>
-        <input type="text" name="one" id="One"><br><br>
+        <form action="">
+            <label for="num1">Number 1:</label>
+            <input type="number" name="num1" id="num1">
+            <small id="num1_err"></small>
+            <br><br>
+            <label for="num2">Number 2:</label>
+            <input type="number" name="num2" id="num2">
+            <small id="num2_err"></small>
+            <br><br>
+            <label for="result">Result :</label>
+            <input type="number" name="result" id="result" readonly="">
+            <br><br>
+            <button type="button" onclick="add()">Add</button>
+        </form>
 
-        <label for="Two">Number Two :</label>
-        <input type="text" name="two" id="Two"><br><br>
+    <script>
+        function formValidation(){
+            let num1 = document.querySelector('#num1').value;
+            let num2 = document.querySelector('#num2').value;
+            let num_one = document.querySelector('#num1');
+            let num_two = document.querySelector('#num2');
+            let num1_err = document.querySelector('#num1_err');
+            let num2_err = document.querySelector('#num2_err');
 
-        <label for="Result">Result :</label>
-        <input type="text" name="result" id="Result"><br><br>
+            if (num1 == '' || num2 == ''){
+                num_one.removeAttribute('class');
+                num_two.removeAttribute('class');
+                num1_err.innerHTML = '';
+                num2_err.innerHTML = '';
 
-        <button type="submit">Add</button>
-    </form>
+                if (num1 == ''){
+                    showError(num1_err,num_one,'Number One is Require');
+                }
+
+                if (num2 == ''){
+                    showError(num2_err,num_two,'Number Two is Require')
+                }
+
+                function showError(numError,numInput,message){
+                    console.log(numError,numInput,message);
+                    numError.innerHTML = message;
+                    numInput.setAttribute('class','error')
+                }
+
+            }else{
+                num_one.removeAttribute('class');
+                num_two.removeAttribute('class');
+                num1_err.innerHTML = '';
+                num2_err.innerHTML = '';
+                return {num1,num2}
+            }
+        }
+
+        function add(){
+            let numbers = formValidation();
+            console.log(numbers);
+            if(numbers){
+                let result = Number(numbers.num1) + Number(numbers.num2);
+                console.log(result);
+                document.querySelector('#result').value = result;
+            }
+            
+        }
+    </script>
+
 </body>
 </html>
