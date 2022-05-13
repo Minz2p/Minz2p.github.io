@@ -1,0 +1,240 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.logo{
+    width: 100px;
+    height: 70px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+.brand_name{
+    position: relative;
+    top: -60px;
+    left: 85px;
+    font-family: lobster;
+    font-size:20px;
+}
+.navbar ul{
+    float:right;
+}
+.nav_brand{
+    display:inline-block;
+}
+.navbar ul li{
+    display:inline-block;
+    padding-top: 30px;
+    padding-right: 40px;
+    text-transform: uppercase;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:black;
+}
+
+@font-face {
+    src: url(lobster/lobster-Regular.ttf);
+    font-family:lobster;
+}
+.cart{
+    position: relative;
+    top:-18px;
+    left: -7px;
+    background-color: black;
+    padding: 0px 5px;
+    color: white;
+    border-radius: 50%;
+}
+.navbar ul li a:hover{
+    color: #3797b9;
+    display: inline-block;
+    transform: translate(4px,-5px);
+    transition-duration: .5s;
+
+}
+
+.navbar{
+    height: 90px;
+}
+/* service */
+.service{
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+    background-color: #e2e8ea;
+    padding-top: 50px;
+    margin-top: 80px;
+    padding-left: 40px;
+    padding-bottom: 50px;
+}
+.service div p{
+    display: inline-block;
+    padding-left: 20px;
+    line-height: 27px;
+}
+.service div p b{
+    font-size: 20px;
+}
+
+/* footer */
+.footer{
+    background-color: #212529;
+}
+
+.footer_nav{
+    text-decoration: none;
+    color: white;
+    padding-top: 50px;
+    display: inline-block;
+    margin:0px 20px ;
+}
+
+.designed_by{
+    color: white;
+    margin-top: 20px;
+}
+
+.footer_icon{
+    color:white;
+    margin: 20px 10px 0px ;
+    display:inline-block;
+    padding-bottom: 20px;
+}
+
+/* end */
+
+/* blog */
+.blogheader{
+    text-align:center;
+    background-color:#e2e8ea;
+    padding:100px;
+    font-family:lobster;
+    font-weight:unset;
+}
+.homelink,.homelink a{
+    position:absolute;
+    margin-left: 45%;
+    top:120px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color:black;
+    font-size:15px;
+    font-weight:bold;
+    margin-top:10px;
+}
+.logopic{
+    position:absolute;
+    width:60px;
+    height:35px;
+    margin-left:930px;
+    top:250px;
+}
+.homelink1,.homelink1 a{
+    position:absolute;
+    margin-left: 53%;
+    top:120px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color:black;
+    font-size:15px;
+    font-weight:bold;
+    margin-top:10px;
+}
+.smallgrid{
+    background-color: #e2e8ea;
+    display:inline-block;
+    margin-top:100px;
+    margin-left:100px;
+    padding: 30px;
+    border-radius: 20px;
+}
+.smallheader{
+    text-transform: uppercase;
+    color: #af3c6e;
+    margin-bottom:15px;
+}
+.floralname{
+    font-family:lobster;
+    font-weight:unset;
+    margin-bottom:15px;
+}
+.sent{
+    line-height:30px;
+}
+.smallgrid img{
+    margin-top:35px;
+    border-radius:50px;
+    padding:30px;
+    transition:.2s all;
+    box-shadow:0 2px 3px 0px rgba(0,0,0,0.25);
+}
+.gridhover:hover .smallgrid img{
+    filter:blur(3px);
+    opacity:.5;
+    transform: scale(.98);
+    box-shadow:none;
+  }
+  .gridhover:hover .smallgrid img:hover{
+    transform:scale(1);
+    filter:blur(0px);
+    opacity:1;
+    box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
+  }
+.smallgridone{
+    background-color: #e2e8ea;
+    display:inline-block;
+    margin-top:100px;
+    margin-left:100px;
+    padding: 69px;
+    border-radius: 20px;
+    width:800px;
+    text-align:center;
+    height:690px;
+}
+.smallgridone img{
+    margin-top:35px;
+    border-radius:50px;
+    padding:30px;
+    transition:.2s all;
+    box-shadow:0 2px 3px 0px rgba(0,0,0,0.25);
+}
+.smallheaderone{
+    text-transform: uppercase;
+    color: #af3c6e;
+    text-align:left;
+    margin-bottom:15px;
+    height:37px;
+}
+.smallgridone iframe{
+    margin-top:35px;
+    border-radius:50px;
+    padding:30px;
+    transition:.2s all;
+    box-shadow:0 2px 3px 0px rgba(0,0,0,0.25);
+}
+.floralnameone{
+    font-family:lobster;
+    font-weight:unset;
+    margin-bottom:13px;
+}
+.sentone{
+    line-height:30px;
+    text-align:justify;
+}
+.gridhover:hover .smallgridone iframe{
+    filter:blur(3px);
+    opacity:.5;
+    transform: scale(.98);
+    box-shadow:none;
+    box-shadow:0 2px 3px 0px rgba(0,0,0,0.25);
+    padding:35px;
+    border-radius: 30px;
+    margin-top: 30px;
+  }
+  .gridhover:hover .smallgridone iframe:hover{
+    transform:scale(1);
+    filter:blur(0px);
+    opacity:1;
+    box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
+    border-radius:50px;
+  }
