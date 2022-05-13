@@ -108,10 +108,8 @@
 .firstabout{
     text-align: center;
     background-color: #e2e8ea;
-    padding: 40px;
+    padding: 50px;
     margin-top: 10px;
-    border: 1px solid #688c8b;
-    border-radius: 500px;
 }
 .about{
     display: inline-block;
@@ -168,6 +166,7 @@
     filter: contrast(1);  
     transition-property: all;
     transition-duration: 800ms;
+    cursor:pointer;
 }
 .image:hover{
     transform: rotate(360deg);
@@ -179,4 +178,32 @@
     margin-right: 100px;
     margin-left: 100px;
     grid-gap: 20px;    
+}
+.part{
+    display:relative;
+    margin-top: 50px;
+    margin-left: 100px;
+    color:#d0a2b6;
+    font-size:25px;
+    margin-bottom: -50px;
+}
+.hr{
+    width:1800px;
+    margin-left:60px;
+    border:1px solid #eaae19;
+}
+.name{
+    display:absolute;
+    margin-left:245px;
+    margin-top:20px;
+}
+.name1{
+    display:absolute;
+    margin-left:820px;
+    margin-top:-20px;
+}
+.name2{
+    display:absolute;
+    margin-left:1395px;
+    margin-top:-20px;
 }

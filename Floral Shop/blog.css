@@ -107,7 +107,7 @@
 .blogheader{
     text-align:center;
     background-color:#e2e8ea;
-    padding:100px;
+    padding:50px;
     font-family:lobster;
     font-weight:unset;
 }
@@ -147,6 +147,7 @@
     margin-left:100px;
     padding: 30px;
     border-radius: 20px;
+    cursor:pointer;
 }
 .smallheader{
     text-transform: uppercase;
@@ -190,6 +191,7 @@
     width:800px;
     text-align:center;
     height:690px;
+    cursor:pointer;
 }
 .smallgridone img{
     margin-top:35px;
