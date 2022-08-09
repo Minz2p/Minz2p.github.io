@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Input Assignment </title>
+    
+</head>
+<body>
+
+    <form action="" method="">
+
+        <label for = "hum-name" ></label>
+        <input type = "text" name = "hum-name" id = "hum-name" title = "please fill your name"  placeholder = "Name" >
+        <br><br>
+        <label for = "hum-age" ></label>
+        <input type = "number" name = "hum-age" id = "hum-age" title = "please fill your age" placeholder = "Age" >
+        <br><br>
+
+        <!-- radio -->
+        <input type = "radio" name = "gender" id = "male" ><label for = "male" > Single </label>
+        <input type = "radio" name = "gender" id = "female" ><label for = "female" > Married </label>
+        <!-- radio -->
+
+    </form> <br>
+
+    <input type = "text" name = "hum-age" id = "myp" title = "please fill your age" placeholder = "Spouse" > <br> <br>
+
+    <button class = "mybtn" type = "submit" title = "Please touch on save" > Save </button>
+
+    <script src = "../jquery.min.js" ></script>
+
+    <script>
+
+          $(function () {
+            $("#myp").hide();
+    
+            $("#female").click(function () {
+              $("#myp").show();
+            });
+    
+            $("#male").click(function () {
+              $("#myp").hide();
+            });
+          });
+
+    </script>
+      
+
+
+    <style>
+
+        .mybtn {
+            background-color : red ;
+            padding : 10px ;
+            width: 100px ;
+            border : none ;
+            border-radius: 10px ;
+        }
+
+        #hum-age {
+            background-color: #dfdfdf;
+            display : inline-block ;
+            width : 300px ;
+            padding : 1px 2px ;
+        }
+
+        #hum-name {
+            padding: 10px 15px ;
+            width : 300px ;
+            background-color: #dfdfdf;
+            border : none ;
+        }
+
+        #hum-age {
+            padding: 10px 15px ;
+            width : 300px ;
+            background-color: #dfdfdf;
+            border : none ;
+        }
+
+        #female {
+            margin-left: 50px ;
+        }
+
+        #myp {
+            padding: 10px 15px ;
+            width : 300px ;
+            background-color: #dfdfdf;
+            border : none ;
+        }
+
+    </style>
+
+
+</body>
+</html>

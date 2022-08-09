@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hobby Assignment</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            *{
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .container{
+                background-color: rgba(33, 32, 32, 0.104);
+                margin-left: 500px;
+                margin-top: 200px;
+                width: 45%;
+                height: 45%;
+                padding-bottom: 100px;
+                padding-right: 100px;
+                border-radius: 150px;
+            }
+            #name{
+                width: 350px;
+                height: 40px;
+                margin-left: 280px;
+                margin-top: 200px;
+                text-align: center;
+                border: 1px solid rgb(248, 241, 234);
+                border-radius: 15px;
+            }
+            ::placeholder{
+                color: black;
+            }
+            p{
+                margin-top: 50px;
+                margin-left: 46%;
+                color: black;
+            }
+            .position{
+                margin-top: 35px;
+                margin-left: 40%;
+                color: black;
+            }
+            .button{
+                margin-left: 70%;
+                width: 80px;
+                height: 30px;
+                background-color: rgb(248, 241, 234);
+                cursor: pointer;
+                border: none;
+                color: black;
+                border-radius: 15px;
+            }
+            button:hover{
+                background-color: rgb(12, 182, 244);
+                color: white;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <form action="">
+                <input type="text" name="name" id="name" placeholder="Name">
+                <br>
+    
+                <p>Please Select Your Hobbies !</p>
+    
+                <div class="position">
+                    <input type="checkbox" name="hobby" id="reading" value="Reading">
+                    <label for="reading" >Reading</label><br><br>
+                    <input type="checkbox" name="hobby" id="guitar" value="Playing Guitar">
+                    <label for="guitar">Playing Guitar</label><br><br>
+                    <input type="checkbox" name="hobby" id="game" value="Game">
+                    <label for="game">Game</label>
+                </div>
+                <br>
+    
+                <button type="submit" class="button">Click</button>
+            </form>
+        </form>
+
+        </div>
+
+    <script src="../jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $(document).ready(function () {
+            
+            // event prevent default => Have => GO / Don't Have => Stop
+            //start form submitting
+           $("form").on("submit", function(event) {
+            
+            // data collecting
+
+            var name = $("input[name = 'name']").val();
+            var reading = $("input[id = 'reading']:checked").val();
+            var guitar = $("input[id = 'guitar']:checked").val();
+            var game = $("input[id = 'game']:checked").val();
+
+           //console.log(`${name}, ${hobby},${hobby1},${hobby2}`);
+        
+            //checking condition for output result
+            if(reading && guitar && game) {
+                // alert(`User name is ${name} and hobbies are ${reading}, ${guitar} and ${game}.`);
+                Swal.fire(
+                    `My name is ${name} and hobbies are ${reading}, ${guitar} and ${game}.`,
+                        'Thank You !',
+                        'success'
+                        )
+            }
+            else if(reading && game) {
+                // alert(`User name is ${name} and hobbies are ${reading} and ${game}.`);
+                Swal.fire(
+                    `My name is ${name} and hobbies are ${reading} and ${game}.`,
+                        'Thank You !',
+                        'success'
+                        )
+            }
+            else if(reading && guitar) {
+                // alert(`User name is ${name} and hobbies are ${reading} and ${guitar}.`);
+                Swal.fire(
+                    `My name is ${name} and hobbies are ${reading} and ${guitar}.`,
+                        'Thank You !',
+                        'success'
+                        )
+            }
+            else if(guitar && game) {
+                // alert(`User name is ${name} and hobbies are ${guitar} and ${game}.`);
+                Swal.fire(
+                    `My name is ${name} and hobbies are ${guitar} and ${game}.`,
+                        'Thank You !',
+                        'success'
+                        )
+            }
+            else if(reading) {
+                var readinghobby = $("input[name = 'hobby']").val();
+                // alert(`User name is ${name} and hobby is ${readinghobby}.`);  
+                Swal.fire(
+                    `My name is ${name} and hobby is ${readinghobby}.`,
+                        'Thank You !',
+                        'success'
+                        )            
+            }
+            else if(guitar) {
+                var guitarhobby = $("input[name = 'hobby1']").val();
+                // alert(`User name is ${name} and hobby is ${guitarhobby}.`);
+                Swal.fire(
+                    `My name is ${name} and hobby is ${guitarhobby}.`,
+                        'Thank You !',
+                        'success'
+                        ) 
+            }
+            else if(game) {
+                var gamehobby = $("input[name = 'hobby2']").val();
+                // alert(`User name is $${name} and hobby is ${gamehobby}.`);
+                Swal.fire(
+                    `My name is $${name} and hobby is ${gamehobby}.`,
+                        'Thank You !',
+                        'success'
+                        ) 
+            }else {
+                // alert("Please Select Your Hobbies !");
+                Swal.fire(
+                        'Please Select Your Hobbies !',
+                        'Thank You !',
+                        'success'
+                        )
+            }
+            event.preventDefault();
+           })
+
+        });
+    </script>
+    </body>
+</html>

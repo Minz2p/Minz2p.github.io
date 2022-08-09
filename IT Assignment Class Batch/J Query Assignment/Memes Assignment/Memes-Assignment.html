@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memes Assignment</title>
+
+    <style>
+
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+        .bgcolor {
+          background-color: gainsboro;
+          margin: 150px;
+          width: 80%;
+          height: 600px;
+          padding-top: 5px;
+          border-radius: 30px;
+          
+        }
+
+        .wholescrollbgcolor{
+            margin: 50px;
+            padding: 1%;
+            background-color: rgb(177, 171, 163);
+            overflow: auto;
+            white-space: nowrap;
+            border-radius: 15px;
+            cursor: pointer;
+          
+        }
+        
+        .mymemes {
+          display: inline-block;
+          text-align: center;
+          padding: 14px;
+          text-decoration: none;
+          background-color: rgb(248, 241, 234);
+          border-radius: 10px;
+        }
+        
+        .mymemes:hover {
+          border: 3px solid rgb(105, 98, 98);
+          border-radius: 15px;
+        }
+
+        .mymemeimage{
+          margin-left: 50px;
+          display: inline-block;
+          /* color: white; */
+          text-align: center;
+          padding: 14px;
+          /* text-decoration: none; */
+          background-color: rgb(248, 241, 234);
+          border-radius: 30px;
+          cursor: pointer;
+        }
+        
+        #dialogname,#captionname{
+          color: black;
+          text-align: center;
+          background-color: rgb(248, 241, 234);
+          border-radius: 30px;
+          border: none;
+        }
+
+        .meme_name {
+          display: inline-block;
+          position: absolute;
+          margin-left: 30%;
+          font-size: 25px;
+          color: rgb(105, 98, 98);
+        }
+
+        .inputcaptionname,#dialogname,#captionname{
+          display: inline-block;
+          position: absolute;
+          margin-left: 15%;
+          margin-top: 30px;
+          width: 500px;
+          height: 30px;
+          text-align: center;
+        }
+
+        /* #captionname{
+          display: inline-block;
+          position: absolute;
+          margin-left: 30%;
+          margin-top: 180px;
+          width: 500px;
+          height: 30px;
+          text-align: center;
+        } */
+
+        #mygenerate {
+          display: inline-block;
+          position: absolute;
+          margin-left: 68%;
+          margin-top: 14%;
+          text-align: center;
+          width: 150px;
+          height: 35px;
+          background-color: rgb(177, 171, 163);
+          border: none;
+          color: rgb(255, 255, 255);
+          border-radius: 30px;
+          cursor: pointer;
+        }
+
+        </style>
+
+</head>
+
+<body>
+
+      <div class = "bgcolor">
+
+        <!-- scroll image link include -->
+        <div class = "wholescrollbgcolor"></div>
+        <!--  -->
+
+        <div class="inputcaptionname">
+          <input type="text" name="dialogname" id = "dialogname" class = "caption" placeholder = "Dialog Name"><label for="dialogname"></label><br><br><br>
+          <input type="text" name="dialogname" id = "captionname" class = "caption" placeholder = "Dialog Name"><label for="captionname"></label> 
+        </div>
+
+        <small class="meme_name"> Image Name Here : Drake Hotline Bling</small>
+
+
+        <input type="button" value="Generate" id="mygenerate">
+
+        <div class="replace_meme">
+          <img 
+            data-id="181913649"
+            data-url="https://i.imgflip.com/30b1gx.jpg"
+            data-name="Drake Hotline Bling"
+            data-box="2"
+            src="https://i.imgflip.com/30b1gx.jpg"
+            alt="Drake Hotline Bling"
+            width = "300px" height = "250px" class="mymemeimage"
+          />
+        </div>
+  
+        
+      </div>
+
+      <!--const rate of memes => rate => ကြိုက် တဲ့ string ပေးလို့ ရ -->
+      <!--$("").html(data) => ရေးထားတဲ့ div(class or id) ထဲ က html ထဲ ကို data ထည့် -->
+      <!--$("").data("id") => ရေးထားတဲ့ div(class or id) ထဲ ကို link ထဲ က data ကို ထည့် -->
+
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script> <!-- Image Download cdn link -->
+      <script src="../jquery.min.js"></script>
+
+              <script>
+
+                  $(function () {
+                      $.get("https://api.imgflip.com/get_memes",function(resp) {
+                          // console.log (resp) ; // server response
+                          if (resp.success) {
+                              console.log(resp.data.memes)
+                              var memes = resp.data.memes;
+                              var data = "";
+                              for ( const rate of memes ) {
+                                  data += ` <img data-id="${rate.id}" data-url="${rate.url}" data-name="${rate.name}" data-box="${rate.box_count}" src="${rate.url}" alt="${rate.name} width = "100px" height = "100px" class="mymemes"> `
+                              }
+                              $(".wholescrollbgcolor").html(data)
+                          }
+                      });
+                      // ------ end ----- >
+
+
+                        var wholescrollpicture = $ (".wholescrollbgcolor");
+                        var mym = $ (".mymemeimage");
+
+                      $(wholescrollpicture).on("click",".mymemes",function() {
+                        var id = $(this).data("id");
+                        var url = $(this).data("url");
+                        var name = $(this).data("name");
+                        var box = $(this).data("box");
+                        var data = `<img class="mymemeimage" data-id="${id}" data-url="${url}" data-name="${name}" src="${url}"
+                        width = "300px" height = "250px" >`;
+                        // console.log(`${url}, ${name}, ${box}`);
+                        $(".replace_meme").html(data);
+
+                        var data = "";
+                        for ( let i = 0; i < box; i++ ) {
+                          data += `<input id = "dialogname" class = "caption" type="text" placeholder = "Dialog Name"/><br><br><br>`;
+                        }
+                        var inputcaptionname = $ (".inputcaptionname");
+                        $(inputcaptionname).html(data);
+
+                        var data = `Image Name : ${name}`;
+                        $(".meme_name").html(data);
+                        // var meme_name = $(".meme_name").html(data);
+                        });
+                        
+                        // --------end ----------> 
+                        
+                        $("#mygenerate").on("click", function () {
+                        var id = $(".mymemeimage").data("id");
+                        var texts = $.map($(".caption"), function (response) {
+                          // return input.value;
+                          return {
+                            text: response.value,
+                          };
+                        });
+                            console.log(texts);
+                            
+                    $.post("https://api.imgflip.com/caption_image",{
+                          template_id: id,
+                          username: "thetpainghtut",
+                          password: "Apple!@#",
+                          boxes: texts,
+                        }, function (resp) {
+                          console.log(resp);
+
+                          if (resp.success) {
+                            var meme_name = $(".meme_name").text();
+                            var image = `<img class="mymemeimage" data-url="${resp.data.url}" data-name="${meme_name}" src="${resp.data.url}" width = "300px" height = "250px">`;
+                            $(".replace_meme").html(image);
+                          }
+
+                          var imgUrl = $(".mymemeimage").data("url");
+                          var imgName = $(".mymemeimage").data("name");
+                          Swal.fire({
+                            title: `${imgName}`,
+                            text: " ",
+                            imageUrl: `${imgUrl}`,
+                            imageWidth: 400,
+                            imageHeight: "auto",
+                            imageAlt: `${name}`,
+                            showCancelButton: true,
+                            cancelButtonColor: "rgb(177, 171, 163)",
+                            confirmButtonText: "Download",
+                            confirmButtonColor: "rgb(36, 157, 148,1)",
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              var saveimg = `${imgName}.jpg`; // .png
+                              saveAs(imgUrl, saveimg);
+                            } else if (result.isDismissed) {
+                              return;
+                            }
+                          });
+                          });
+                        })
+                        
+                    });
+                
+              </script>
+
+</body>
+</html>

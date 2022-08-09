@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="bmi.js"></script>
+        <!-- Favicon -->
+        <link rel="icon" type="text/css" href="image/bmi_img.jfif">
+        <link rel="apple-touch-icon" href="image/bmi_img.jfif">
+
+        <script src="jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    
+        <!-- Custom Css  -->
+        <link rel="stylesheet" type="text/css" href="css/font.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <div class="con col-xl-12 col-lg-6 col-md-6 col-sm-12 col-12 row" id="app" >
+        <h1 class="header">BMI Calculator</h1>
+        <div>
+            <input type="text" name="feet" v-model.number="feet" placeholder="Feet ( Height )" class="feet">
+            <input type="text" name="inches" v-model.number="inches" placeholder="Inches ( Height )" class="inches">
+            <input type="text" name="pound" v-model.number="pound" placeholder="Pound ( Weight )" class="pound">
+            <button @click="result()" class="mybtn">Result</button> 
+            <div class="bmi">
+                <p>BMI Categories:
+                    Underweight =<18.5<br>
+                    Normal weight = 18.5–24.9<br>
+                    Overweight = 25–29.9<br>
+                    Obesity = BMI of 30 or greater<br>
+                 </p>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+
+
+
+
+    <script>
+        const mountedApp = app.mount("#app");
+    </script>
+</body>
+</html>

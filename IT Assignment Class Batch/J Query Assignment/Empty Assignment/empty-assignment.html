@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day8-assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/927697cdc8.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        font-family: "Open Sans", sans-serif;
+      }
+
+      ul.link-wapper {
+        list-style: none;
+        text-align: center;
+      }
+
+      ul.link-wapper li {
+        display: inline-block;
+        padding: 10px;
+      }
+
+      ul.link-wapper li a {
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+      }
+
+      ul.link-wapper li a.active {
+        color: #0037ff;
+        border-bottom: 1px solid red;
+      }
+
+      .noti {
+        border: 3px solid black;
+        padding: 5px;
+        border-radius: 3px;
+      }
+      
+      .item_count {
+        padding: 0 4px;
+        border: 1px solid black;
+        border-radius: 50%;
+      }
+
+      .content {
+        max-width: 800px;
+        background-color: antiquewhite;
+        padding: 20px;
+        margin: 0 auto;
+        display: none;
+      }
+
+      .container {
+        max-width: 800px;
+      }
+
+      .products {
+        display: flex;
+        gap: 12px;
+        align-content: space-between;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .item_img {
+        max-width: 200px;
+        height: 200px;
+        border: 1px solid pink;
+        border-radius: 5px;
+      }
+
+      table {
+        width: 100%;
+        margin: 0 auto;
+        border-spacing: 0;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 15px;
+        border-radius: 2px;
+      }
+
+      .button_td {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .empty {
+        max-width: 300px;
+        margin: 0 auto;
+        font-size: 30px;
+      }
+
+      button.addtoCart_btn {
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid pink;
+        padding: 5px 10px;
+        background-color: white;
+      }
+
+      button.addtoCart_btn:hover {
+        border: 1px solid white;
+        background-color: pink;
+      }
+
+      @media (max-width: 768px) {
+        .products {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    </style>
+    
+
+    <script src="../jquery.min.js"></script>
+    <script src="productcart.js"></script>
+    <script>
+      $(function (param) {
+        $(".content").first().slideDown();
+
+        $("ul.link-wapper li a").on("click", function (event) {
+          var current_tab = $(this);
+          $("ul.link-wapper li a").removeClass("active");
+          current_tab.addClass("active");
+
+          $(".content").slideUp();
+          current_tab_href = current_tab.attr("href"); // #about
+          $(current_tab_href).slideDown(); // $('#about')
+
+          event.preventDefault();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="tab">
+      <!-- Nav -->
+      <ul class="link-wapper">
+        <li>
+          <a href="#home" class="active">Home</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+        <li>
+          <a href="#shop">Shop</a>
+        </li>
+        <li>
+          <a href="#cart">Cart</a>
+        </li>
+        <li>
+          <div class="noti">
+            Items: <span class="item_count"></span>
+            <i class="fa-solid fa-basket-shopping"></i>
+          </div>
+          </p>
+        </li>
+      </ul>
+
+     
+
+      <!-- Content -->
+      <div class="content" id="home">
+        <h2>Home Tab</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+          fuga neque autem est fugit placeat mollitia sit ducimus. Quidem
+          voluptatum blanditiis porro excepturi eaque atque ad at officia illo
+          eligendi!
+        </p>
+      </div>
+
+      <div class="content" id="about">
+        <h2>About Tab</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+          fuga neque autem est fugit placeat mollitia sit ducimus. Quidem
+          voluptatum blanditiis porro excepturi eaque atque ad at officia illo
+          eligendi!
+        </p>
+      </div>
+
+      <div class="content" id="contact">
+        <h2>Contact Tab</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+          fuga neque autem est fugit placeat mollitia sit ducimus. Quidem
+          voluptatum blanditiis porro excepturi eaque atque ad at officia illo
+          eligendi!
+        </p>
+      </div>
+
+      <!-- Shop -->
+      <div class="content" id="shop">
+        <div class="container">
+          <h2 style="text-align: center">Popular Products</h2>
+          <div class="products">
+            <div class="item">
+              <img
+                src="https://static.libertyprim.com/files/familles/pomme-large.jpg?1569271834"
+                alt=""
+                class="item_img"
+              />
+              <h4>Apple</h4>
+              <p>2000 ks</p>
+              <button
+                class="addtoCart_btn"
+                data-id="1"
+                data-name="Apple"
+                data-price="2000"
+              >
+                AddtoCart
+              </button>
+            </div>
+            <div class="item">
+              <img
+                src="https://joanfruit.com/imagecache/custom/ff86993f3754009600e9b9789a140e96.jpeg?fit=0"
+                alt=""
+                class="item_img"
+              />
+              <h4>Banana</h4>
+              <p>5000 ks</p>
+              <button
+                class="addtoCart_btn"
+                data-id="2"
+                data-name="Banana"
+                data-price="5000"
+              >
+                AddtoCart
+              </button>
+            </div>
+            <div class="item">
+              <img
+                src="https://www.nutraingredients-asia.com/var/wrbm_gb_food_pharma/storage/images/9/1/2/0/4130219-29-eng-GB/Antioxidant-rich-grape-powder-protects-brain-from-damage-caused-by-high-fat-and-high-sugar-diets-Study.jpg"
+                alt=""
+                class="item_img"
+              />
+              <h4>Grape</h4>
+              <p>4000 ks</p>
+              <button
+                class="addtoCart_btn"
+                data-id="3"
+                data-name="Grape"
+                data-price="4000"
+                data-qty="1"
+              >
+                AddtoCart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" id="cart">
+        <div class="cart_empty"></div>
+        <table class="table">
+          <thead>
+            <th>No</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </thead>
+          <tbody class="product_data"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- // 1 - a => active class remove 
+// 2 - current a => add class active 
+// ------ hide all content
+// 3 - get href attr value of current a
+// 4 - show related content - current attr href  -->

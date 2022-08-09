@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Product </title>
+</head>
+<body>
+    <style>
+        .myprod {
+            text-align: center ;
+        }
+
+        .divided{
+            width:100px;
+            margin: auto;
+            border: 1px solid #454249;
+            margin-bottom: 50px;
+        }
+        .product{
+            display:grid;
+            grid-template-columns: auto auto auto ;
+            margin-right: 250px;
+            margin-left: 250px;
+            grid-gap: 1px;
+            text-align: center;
+        }
+        .product_img{
+            width: 50%;
+            border-radius:10px;
+            box-shadow: 0 10px 20px rgb(0, 0, 0,.17);
+        }
+        .addtocart{
+            border: 2px solid #e3e7e8;
+            background-color:hsl(0, 95%, 58%);
+            padding: 10px 25px;
+            border-radius:15px;
+            margin-top: 20px;
+            color: white;
+        }
+        .addtocart:hover{
+            cursor: pointer;
+        }
+        p {
+            margin-top: 25px ;
+        }
+        
+    </style>
+
+    <h1 class="myprod"> My Product </h1>
+    <hr class="divided">
+    <div class="product">
+        <div>
+            <img src="../My Product Assignment/1.jpg" alt="" class="product_img">
+            <p>Product One</p>
+            <button class="addtocart" type="submit" >Add To Cart</button>
+        </div>
+        <div>
+            <img src="../My Product Assignment/2.webp" alt="" class="product_img">
+            <p>Product Two</p>
+            <button class="addtocart" type="submit" >Add To Cart</button>
+        </div>
+        <div>
+            <img src="../My Product Assignment/3.png" alt="" class="product_img">
+            <p>Product Three</p>
+            <button class="addtocart" type="submit" >Add To Cart</button>
+        </div>
+    </div>
+
+</body>
+</html>
